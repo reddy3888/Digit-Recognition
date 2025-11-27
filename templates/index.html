@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Digit Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Digit Recognizer</h1>
+            <p>Draw a digit (0-9) and let the AI guess it!</p>
+        </header>
+
+        <main>
+            <div class="canvas-container">
+                <canvas id="drawingCanvas" width="280" height="280"></canvas>
+                <div class="controls">
+                    <button id="clearBtn" class="btn secondary">Clear</button>
+                    <button id="predictBtn" class="btn primary">Predict</button>
+                </div>
+            </div>
+
+            <div class="result-container">
+                <h2>Prediction</h2>
+                <div id="result" class="result-box">?</div>
+                <p id="confidence">Confidence: -</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by TensorFlow & Flask</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
